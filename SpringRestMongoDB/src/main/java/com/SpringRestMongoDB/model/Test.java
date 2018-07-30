@@ -14,7 +14,7 @@ public class Test {
 	private String parametre;
 	private String  temps_rep;
 	private String resultat_attendu;
-	private List<String> emails;
+	private String emails;
 	
 	
 	
@@ -22,7 +22,7 @@ public class Test {
 	
 	}
 	public Test(String nom, String uRL, String parametre, String temps_rep, String resultat_attendu,
-			List<String> emails) {
+			String emails) {
 		
 		
 		this.nom = nom;
@@ -68,10 +68,10 @@ public class Test {
 	public void setResultat_attendu(String resultat_attendu) {
 		this.resultat_attendu = resultat_attendu;
 	}
-	public List<String> getEmails() {
+	public String getEmails() {
 		return emails;
 	}
-	public void setEmails(List<String> emails) {
+	public void setEmails(String emails) {
 		this.emails = emails;
 	}
 	

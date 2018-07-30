@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "tests")
-@TypeAlias("historique")
+@Document(collection = "historique")
+//@TypeAlias("historique")
 public class Historique extends Test { 
 	private String  temps_rep_reel;
 	private String date;
@@ -22,13 +22,13 @@ public class Historique extends Test {
 	}
 
 	public Historique(String nom, String uRL, String parametre, String temps_rep, String resultat_attendu,
-			List<String> emails) {
+			String emails) {
 		super(nom, uRL, parametre, temps_rep, resultat_attendu, emails);
 	
 	}
 
 	public Historique(String nom, String URL, String parametre, String temps_rep, String resultat_attendu,
-			List<String> emails,String temps_rep_reel,String date,String resultat) {
+			String emails,String temps_rep_reel,String date,String resultat) {
 		super(nom, URL, parametre, temps_rep, resultat_attendu, emails);
 		this.temps_rep_reel=temps_rep_reel;
 		this.date=date;

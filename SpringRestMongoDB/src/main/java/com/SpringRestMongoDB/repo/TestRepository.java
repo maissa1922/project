@@ -8,5 +8,7 @@ import com.SpringRestMongoDB.model.Customer;
 import com.SpringRestMongoDB.model.Test;
 
 public interface TestRepository extends MongoRepository<Test, String>{
-	//List<Customer> findByAge(int age);
+
+//	Object loadUserByUsername(String username);
+
 }

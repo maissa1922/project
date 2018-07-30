@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.xml.soap.SOAPMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,11 +39,11 @@ public class HistoriqueController {
 		
 		repository.findAll().forEach(tests::add);
 		for(Historique h:tests)
-		{	System.out.print(h.getNom()+"  "+h.getTemps_rep_reel());
+
     	
-    if(h.getResultat()!=null && h.getDate()!=null &&  String.valueOf(h.getTemps_rep_reel())!= null ) 
+		{   if(h.getResultat()!=null && h.getDate()!=null &&  String.valueOf(h.getTemps_rep_reel())!= null ) 
     	tests_non_nuls.add(h);
-		}
+	   }
     	
 		return tests_non_nuls;
 	
@@ -51,10 +53,14 @@ public class HistoriqueController {
 	@PostMapping("/historique/create")
 	public Historique postTests(@RequestBody Historique test) {
  
+		
 		Historique _test = repository.save(new Historique(test.getNom(), test.getURL(),test.getParametre(),test.getTemps_rep(),test.getResultat_attendu(),test.getEmails(),test.getTemps_rep_reel(),test.getDate(),test.getResultat()));
 		return _test;
 	
 	}
+
+
+
  
 
 

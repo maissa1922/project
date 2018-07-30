@@ -11,6 +11,7 @@ public class SpringRestMongoDbApplicationTests {
 
 	@Test
 	public void contextLoads() {
+	
 	}
 
 }
